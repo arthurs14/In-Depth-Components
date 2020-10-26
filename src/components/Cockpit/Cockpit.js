@@ -1,7 +1,7 @@
 import React from 'react';
 import classes from './Cockpit.module.css';
 
-const Cockpit = ({ showPersons, persons, toggle }) => {
+const Cockpit = ({ showPersons, persons, toggle, title }) => {
   let assignedClasses = [];
   let btnClass = '';
 
@@ -20,7 +20,7 @@ const Cockpit = ({ showPersons, persons, toggle }) => {
 
   return (
     <div className={classes.Cockpit}>
-      <h1>Hi, I'm a React App</h1>
+      <h1>{title}</h1>
       <p className={assignedClasses.join(' ')}>This is really working!</p>
       <button className={btnClass} onClick={toggle}>Toggle Persons</button>
     </div>
