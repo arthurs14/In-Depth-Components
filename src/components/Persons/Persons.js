@@ -26,18 +26,23 @@ class Persons extends Component {
     console.log(snapshot);
   }
 
+  componentWillUnmount() {
+    console.log('[Persons.js] componentWillUnmount');
+  }
+
   render() {
     console.log('[Persons.js] rendering...');
     const { persons, click, changed } = this.props;
 
     return persons.map((person, index) => {
-      return (<Person
-        click={() => click(index)}
-        name={person.name}
-        age={person.age}
-        key={index}
-        changed={(event) => changed(event, person.id)}
-      />
+      return (
+        <Person
+          click={() => click(index)}
+          name={person.name}
+          age={person.age}
+          key={index}
+          changed={(event) => changed(event, person.id)}
+        />
       );
     });
   }

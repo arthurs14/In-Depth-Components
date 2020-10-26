@@ -1,7 +1,27 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import classes from './Cockpit.module.css';
 
 const Cockpit = ({ showPersons, persons, toggle, title }) => {
+  useEffect(() => {
+    console.log('[Cockpit.js] useEffect');
+    // http request in here
+    setTimeout(() => {
+      alert('Saved Data to cloud');
+    }, 1000);
+    return () => {
+      console.log('[Cockpit.js] cleanupwork in useEffect');
+    };
+    // passing data in an array will allow it to figure to re-render or not
+    // empty array will run it once
+  }, [persons]);
+
+  useEffect(() => {
+    console.log('[Cockpit.js] 2nd useEffect');
+    return () => {
+      console.log('[Cockpit.js] cleanupwork in 2nd useEffect');
+    };
+  });
+
   let assignedClasses = [];
   let btnClass = '';
 
