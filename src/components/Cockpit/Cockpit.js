@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import classes from './Cockpit.module.css';
 
-const Cockpit = ({ showPersons, persons, toggle, title }) => {
+const Cockpit = ({ showPersons, personsLength, toggle, title }) => {
   useEffect(() => {
     console.log('[Cockpit.js] useEffect');
     // http request in here
@@ -30,11 +30,11 @@ const Cockpit = ({ showPersons, persons, toggle, title }) => {
     btnClass = classes.Red;
   }
 
-  if (persons.length <= 2) {
+  if (personsLength <= 2) {
     assignedClasses.push(classes.red);
   }
 
-  if (persons.length <= 1) {
+  if (personsLength <= 1) {
     assignedClasses.push(classes.bold); // assignedClasses = ['red', 'bold']
   }
 
@@ -47,4 +47,4 @@ const Cockpit = ({ showPersons, persons, toggle, title }) => {
   );
 };
 
-export default Cockpit;
+export default React.memo(Cockpit);
