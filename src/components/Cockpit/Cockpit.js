@@ -13,7 +13,7 @@ const Cockpit = ({ showPersons, persons, toggle, title }) => {
     };
     // passing data in an array will allow it to figure to re-render or not
     // empty array will run it once
-  }, [persons]);
+  }, []);
 
   useEffect(() => {
     console.log('[Cockpit.js] 2nd useEffect');
