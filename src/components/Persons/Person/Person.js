@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import Auxiliary from '../../../hoc/Auxiliary/Auxiliary';
+import React, { Component, Fragment } from 'react';
+//import Auxiliary from '../../../hoc/Auxiliary/Auxiliary';
 //import classes from './Person.module.css';
 
 class Person extends Component {
@@ -8,12 +8,12 @@ class Person extends Component {
     const { click, name, age, changed } = this.props;
     return (
       // <div className={classes.Person}>
-      <Auxiliary>
+      <Fragment>
         <p onClick={click}>
           {`I'm ${name} and I am ${age} years old!`}
         </p>
         <input type="text" onChange={changed} value={name} />
-      </Auxiliary>
+      </Fragment>
       // </div>
     );
   }
