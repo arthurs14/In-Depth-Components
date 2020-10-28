@@ -53,7 +53,13 @@ class App extends Component {
     const persons = [...this.state.persons];
     persons[personIndex] = person;
 
-    this.setState({ persons: persons });
+    // update state when depending on old state
+    this.setState((prevState, props) => {
+      return {
+        persons: persons,
+        changeCounter: prevState.changeCounter + 1,
+      };
+    });
   }
 
   deletePersonHandler = (personIndex) => {
